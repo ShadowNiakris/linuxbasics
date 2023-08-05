@@ -1,0 +1,3 @@
+root:x:100:
+bin:x:131:
+daemon:x:122:
