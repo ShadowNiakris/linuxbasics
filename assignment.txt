@@ -1,12 +1,13 @@
 #Задание:
 #1. С помощью команды sed напечатайте строку из /etc/passwd о пользователе root.
-sed '/root/p' /etc/passwd -n
+sed '/^root:/p' /home/user/passwd.copy -n
 
 #2.Используя файл 020-sed из урока и команду sed, замените в нем символ h на H в первой и третьей строке. 
 #Подсказка: можно использовать аргумент -e для упрощения.
 #Данные обязательно должны меняться в самом файле.
-sed -i.backup -e '1s/h/H/;3s/h/H/' 020-sed
+sed -i.backup -e '1s/h/H/;3s/h/H/g' 020-sed
 
 #3.Замените командой sed в файле /etc/os-release NAME="Ubuntu" на NAME="MyUbuntu".
 #Данные обязательно должны меняться в самом файле.
-sudo sed -i.backup -e 's/NAME="Ubuntu"/NAME="MyUbuntu"/' /etc/os-release
+ sudo sed -i.backup -e 's/^NAME="Ubuntu"/NAME="MyUbuntu"/' /etc/os-release -
+-follow-symlinks
