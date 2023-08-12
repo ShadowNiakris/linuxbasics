@@ -8,7 +8,7 @@ awk -v v="$(whoami)" -F ':' '{ if ($1 == v) print $1 " " $7}' /etc/passwd
 #2.Используя awk, посчитайте в /etc/passwd сумму всех идентификаторов пользователей, 
 #которые используют командную оболочку bash.
 ```
-awk -F ':' '{if ($7 == "/usr/sbin/nologin") n=n+$3 } END {print n}' /etc/passwd
+awk -F ':' '{if ($7 == "/bin/bash") n=n+$3 } END {print n}' /etc/passwd
 ```
 
 #3. Используя awk, распечатайте четные строки файла /etc/passwd.
